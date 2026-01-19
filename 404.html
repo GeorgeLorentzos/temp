@@ -1,68 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Notice - Outstanding Invoice</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: white;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .container {
-            text-align: center;
-            max-width: 600px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        
-        h1 {
-            color: black;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        
-        p {
-            color: black;
-            font-size: 16px;
-            line-height: 1.6;
-            max-width: 400px;
-            margin-bottom: 12px;
-        }
-        
-        @media (max-width: 640px) {
-            h1 {
-                font-size: 24px;
-            }
-            
-            p {
-                font-size: 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Outstanding</title>
+  <style>
+    @page {
+      margin: 2cm 2cm 3cm 2cm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      color: #333;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 12px;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 11px;
+        padding: 10px;
+      }
+    }
+
+    .header {
+      margin-bottom: 1cm;
+      text-align: center;
+    }
+
+    .notice-title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #d32f2f;
+    }
+
+    @media (max-width: 768px) {
+      .notice-title {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .notice-title {
+        font-size: 20px;
+      }
+    }
+
+    .content {
+      max-width: 700px;
+      width: 100%;
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content {
+        padding: 20px;
+      }
+    }
+
+    .message {
+      margin-bottom: 1.5cm;
+      line-height: 1.8;
+    }
+
+    .details-box {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+      margin: 1.5cm 0;
+    }
+
+    .details-box table {
+
+      border-collapse: collapse;
+    }
+
+    .details-box td {
+      padding: 8px 0;
+      border: none;
+    }
+
+    .details-box .label {
+      font-weight: 600;
+      width: 40%;
+    }
+
+    @media (max-width: 480px) {
+      .details-box .label {
+        width: 35%;
+      }
+    }
+
+    .amount-due {
+      font-size: 20px;
+      font-weight: 600;
+      color: #d32f2f;
+      text-align: center;
+      margin: 1.5cm 0;
+      padding: 15px;
+      border-top: 2px solid #ddd;
+      border-bottom: 2px solid #ddd;
+    }
+
+    @media (max-width: 480px) {
+      .amount-due {
+        font-size: 18px;
+        margin: 1cm 0;
+      }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 1.5cm;
+      color: #666;
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Payment Outstanding</h1>
-        <p>You should have paid your developer for services rendered where delivery has been completed.</p>
-        <p>Payment from Aimilios Siarmpas remains outstanding.</p>
+  <div class="content">
+    <div class="header">
+      <div class="notice-title">Payment Outstanding</div>
     </div>
+
+    <div class="message">
+      <p>This notice serves to inform that payment for server hosting services remains outstanding and overdue.</p>
+      
+      <p>Services have been delivered and the server has been provisioned as agreed. However, payment has not been received from Aimilios Siarmpas.</p>
+    </div>
+
+    <div class="details-box">
+      <table>
+        <tr>
+          <td class="label">Service:</td>
+          <td>Server Hosting</td>
+        </tr>
+        <tr>
+          <td class="label">Client:</td>
+          <td>Aimilios Siarmpas</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="message">
+      <p>Payment is required immediately to maintain service continuity. Failure to remit payment may result in service suspension.</p>
+      
+      <p>Please arrange payment at your earliest convenience to avoid any disruption to your server hosting.</p>
+    </div>
+
+    <div class="footer">
+      <p>This is an official payment notice generated on 2026-01-20</p>
+    </div>
+  </div>
 </body>
 </html>
